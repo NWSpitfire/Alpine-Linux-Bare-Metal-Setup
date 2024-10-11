@@ -195,6 +195,16 @@ Installing Docker is a several step process.
 
         apk add docker-cli-compose
 
+#### Test to make sure docker works correctly.
+
+    docker run --name docker-nginx -p 80:80 nginx
+
+Go to the systems IP address, on port 80 and you should see the Nginx landing page!.
+
+###### Press "CTRL + C" to exit.
+
+![Nginx](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/nginx.png)
+
 
         
 ### Install htop to view system usage in a more human readable format
