@@ -31,7 +31,7 @@
 
         df -h
 
-###### NOTE: On most systems it is likely to be /dev/sda1. However on some systems (like thin clients) it may be different due to them using different storage technologies. For example, Thin client might me mmcblk0.
+###### NOTE: On most systems it is likely to be /dev/sda1. However on some systems (like thin clients) it may be different due to them using different storage technologies. For example, Thin client might me /dev/mmcblk0.
 
 5. Run Alpine system setup script (Installation).
 
@@ -69,15 +69,21 @@ This script will run through and setup Alpine's configuration. The parameters to
 
 This setup will create the following disk structure.
 
-    - **/dev/sda1** as BOOT (500MB) in **/boot**
-    - **/dev/sda2** as SWAP (2GB (if 2048 specified), or 1GB (if 1024 specified))
-    - **/dev/sda3** as ROOT (rest of available disk space).
+    * **/dev/sda1** as BOOT (500MB) in **/boot**
+    * **/dev/sda2** as SWAP (2GB (if 2048 specified), or 1GB (if 1024 specified))
+    * **/dev/sda3** as ROOT (rest of available disk space).
 
 9. After these have run through the system will be fully initialised and Alpine will be installed to the internal system disk. Reboot to apply.
 
         reboot
 
 # System Initialisation
+
+This section is optional but used to install other applications such as docker or Wireless drivers.
+
+### Basic Syntax
+
+ - 
 
 # Credits and Links
 
