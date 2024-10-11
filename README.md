@@ -43,33 +43,33 @@ TBA
 
 This script will run through and setup Alpine's configuration. The parameters to be setup are:
 
-  1. Keyboard and Variant.
+1. Keyboard and Variant.
 
-  2. Hostname.
+2. Hostname.
 
-  3. Network options: 
+3. Network options: 
     
-  3a. Select the eth0 adapter, this is the onboard ethernet port
+3a. Select the eth0 adapter, this is the onboard ethernet port
 
-  3b. You can either specify DHCP or setup static networking.
+3b. You can either specify DHCP or setup static networking.
 
-  3c. DNS Options. It is recommended to use 8.8.8.8 and none for the domain
+3c. DNS Options. It is recommended to use 8.8.8.8 and none for the domain
 
-  4. Time zone options: Just use the suggested defaults.
+4. Time zone options: Just use the suggested defaults.
 
-  5. Proxy Options: Use noneif you are connecting directly to the Internet.
+5. Proxy Options: Use noneif you are connecting directly to the Internet.
 
-  6. SSH Options. Select OpenSSH.
+6. SSH Options. Select OpenSSH.
 
-  7. NTP Options. Chrony is a good choice.
+7. NTP Options. Chrony is a good choice.
 
-  8. Boot Mode: 
+8. Boot Mode: 
     
-  8a. Select sys to install the system on disk.
+8a. Select sys to install the system on disk.
 
-  8b. TBA.
+8b. TBA.
 
-  9. Disk Options. Select the system disk based on drive identified in Step 4. Most systems will use **sda**, however some (Thin Clients) might use *mmcblk0**.
+9. Disk Options. Select the system disk based on drive identified in Step 4. Most systems will use **sda**, however some (Thin Clients) might use *mmcblk0**.
 
 This setup will create the following disk structure.
 
