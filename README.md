@@ -276,28 +276,28 @@ This section is specifically for setting up the Realtek WiFi dongle on my system
 
         nano /etc/network/interfaces
 
-Add wlan0 definition to the file
+12. Add wlan0 definition to the file
 
         auto wlan0
         iface wlan0 inet dhcp
 
     ![WLAN Auto](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/wlan-auto.png)
 
-12. Test to make sure everything is configured correctly and the interface will come up as expected. First bring the interface down.
+13. Test to make sure everything is configured correctly and the interface will come up as expected. First bring the interface down.
 
         ip link set wlan0 down
 
-13. Now manually restart the networking service.
+14. Now manually restart the networking service.
 
         rc-service networking --quiet restart &
 
     ![WLAN test](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/wlan-test.png)
 
-14. Now that everything is setup and works, set WPA supplicant to start automatically on boot.
+15. Now that everything is setup and works, set WPA supplicant to start automatically on boot.
 
         rc-update add wpa_supplicant boot
 
-15. Ensure networking is set to start automatically on boot.
+16. Ensure networking is set to start automatically on boot.
 
         rc-update add networking boot
 
