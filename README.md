@@ -339,3 +339,5 @@ With the above configuration, udhcpc will only run once at boot. If the Wifi isn
 [Fixing Alpine Package Error](https://www.hasanaltin.com/error-unable-to-select-packages-error-on-alpine-linux/)
 
 [Alpine Docker](https://wiki.alpinelinux.org/wiki/Docker)
+
+[Alpine Wi-Fi](https://wiki.alpinelinux.org/wiki/Wi-Fi#Troubleshooting)
