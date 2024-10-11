@@ -109,15 +109,15 @@ This section is optional but used to install other applications such as docker o
 
 **Before installing any services, its bet to run the commands below as a root user. To enter the root terminal, run;**
 
-        su
+    su
 
 ## Fixing the package manager.
 
 On initial install, Alpine is configured to use the **MAIN** package repository to fetch its packages. This is fine, but some packages, such as Docker, are only available on the **COMMUNITY** package repository. By default, the COMMUNITY repository is disabled, meaning if you try to install a package (in this case Docker), which is only available on the COMMUNITY repository, then you will get an error;
 
-        ERROR: unable to select packages:
-        docker (no such package):
-        required by: world[docker]
+    ERROR: unable to select packages:
+    docker (no such package):
+    required by: world[docker]
 
 To fix this, you will have to enable the **COMMUNITY** repository. 
 
@@ -182,7 +182,7 @@ Installing Docker is a several step process.
         
 ### Install htop to view system usage in a more human readable format
 
-        apk add htop
+    apk add htop
 
 ###### NOTE: "top" is installed by default, I just prefer htop.
 
