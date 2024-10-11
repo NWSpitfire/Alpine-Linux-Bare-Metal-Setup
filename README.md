@@ -164,6 +164,9 @@ To search for available packages and their names, use the links below.
 [Linux Package Index](https://pkgs.org/)
 ###### NOTE: This package index features ALL linux distros, to search for Alpine specifically, you have to use the filters.
 
+** Before starting, don't forget to become the root user.**
+
+        su
 
 ### Install Nano file editor
 
