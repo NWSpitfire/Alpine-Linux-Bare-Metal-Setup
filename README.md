@@ -101,6 +101,14 @@ This section is a WIP, but is used to highlight functions of Alpine and how they
 
         apk add <package name>
 
+### Become the root user
+
+        su
+
+### Exit the root user terminal
+
+        su -
+
 
 
 # Install Packages
@@ -264,7 +272,60 @@ This section is specifically for setting up the Realtek WiFi dongle on my system
     ![DHCP Success](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/DHCP%20Success.png)
 
 
-11. 
+11. Set the Wi-Fi adapter and DHCP to start automatically on boot.
+
+        nano /etc/network/interfaces
+
+Add wlan0 definition to the file
+
+        auto wlan0
+        iface wlan0 inet dhcp
+
+    ![WLAN Auto](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/wlan-auto.png)
+
+12. Test to make sure everything is configured correctly and the interface will come up as expected. First bring the interface down.
+
+        ip link set wlan0 down
+
+13. Now manually restart the networking service.
+
+        rc-service networking --quiet restart &
+
+    ![WLAN test](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/wlan-test.png)
+
+14. Now that everything is setup and works, set WPA supplicant to start automatically on boot.
+
+        rc-update add wpa_supplicant boot
+
+15. Ensure networking is set to start automatically on boot.
+
+        rc-update add networking boot
+
+    ![WLAN boot](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/wlan-boot.png)    
+
+### Setting DHCP to update automatically.
+
+With the above configuration, udhcpc will only run once at boot. If the Wifi isn't available then, or the network changes after booting, udhcpc needs to be notified. You can automatically notify udhcpc of network changes by using a wpa_cli action file, such as the one installed by default at `/etc/wpa_supplicant/wpa_cli.sh`.
+
+- **MANUALLY**
+
+        wpa_cli -a /etc/wpa_supplicant/wpa_cli.sh
+
+- **AUTOMATICALLY**
+
+1. Open the WPA CLI file.
+
+        nano /etc/conf.d/wpa_cli
+
+2. Copy the update command into the file.
+
+        WPACLI_OPTS="-a /etc/wpa_supplicant/wpa_cli.sh"
+
+    ###### NOTE: If it is already present, this step is not needed.
+
+3. Set the WPA CLI to start on system boot.
+
+        rc-update add wpa_cli boot
 
 
 # Credits and Links
