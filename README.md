@@ -127,6 +127,8 @@ To fix this, you will have to enable the **COMMUNITY** repository.
 
 You should see both the **/main** and **/community** are listed, but the **/community** is commented out with a **#**.
 
+###### NOTE: Press "CTRL + C" to exit.
+
 2. Run Vim editor to enable the community repository.
 
         vi /etc/apk/repositories
@@ -155,9 +157,11 @@ To search for available packages and their names, use the links below.
 ###### NOTE: This package index features ALL linux distros, to search for Alpine specifically, you have to use the filters.
 
 
-### Install Nano file editor.
+### Install Nano file editor
 
     apk add nano
+
+
 
 ### Install Docker & Docker Compose
 
@@ -179,6 +183,8 @@ Installing Docker is a several step process.
 4. Now that Docker is installed and setup, Docker Compose needs to be installed.
 
         apk add docker-cli-compose
+
+
         
 ### Install htop to view system usage in a more human readable format
 
@@ -186,8 +192,77 @@ Installing Docker is a several step process.
 
 ###### NOTE: "top" is installed by default, I just prefer htop.
 
-### 
 
+
+## Wi-Fi Setup
+
+This section is specifically for setting up the Realtek WiFi dongle on my system.
+
+**Run commands as root user**
+
+    su
+
+-----
+
+1. Update the system package repository.
+
+        apk update
+
+2. Install WPA Supplicant.
+
+        apk add wpa_supplicant
+
+3. Install the Realtek Wi-Fi driver.
+
+        apk add --upgrade linux-firmware-rtlwifi
+
+[Package info and supported devices](https://alpine.pkgs.org/3.20/alpine-main-x86_64/linux-firmware-rtlwifi-20240811-r0.apk.html)
+
+4. List network adapters. Look for the wlan0 specifially to make sure it is listed.
+
+        ip a
+
+    ###### NOTE: If you don't see wlan0, try rebooting. If not see the Troubleshooting section.
+
+5. Add your wireless credentials to the WPA Supplicant configuration file.
+
+        wpa_passphrase 'ExampleWifiSSID' 'ExampleWifiPassword' > /etc/wpa_supplicant/wpa_supplicant.conf
+
+    ###### NOTE: The small quotation mark encasing the SSID and Password are required.
+
+6. Start WPA Supplicant in the foreground to confirm it works.
+
+        wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+###### If this prints successful connection (as pictured below), press "CTRL + C" to stop it and get back to the terminal.
+
+[INSERT PICTURE HERE]
+
+7. If Step 6 worked, run it in the background.
+
+        wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+[INSERT PICTURE HERE]
+
+8. Check the adapter has come up (it won't have an IP yet).
+
+        ip a
+
+[INSERT PICTURE HERE]
+
+9. Configure the interface with an IP address.
+
+        udhcpc -i wlan0
+
+[INSERT PICTURE HERE]
+
+10. Check the interface has successfully leased an IP from the DHCP Server.
+
+        ip addr show wlan0
+
+[INSERT PICTURE HERE]
+
+11. 
 
 
 # Credits and Links
