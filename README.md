@@ -230,37 +230,39 @@ This section is specifically for setting up the Realtek WiFi dongle on my system
 
     ###### NOTE: The small quotation mark encasing the SSID and Password are required.
 
+    ![Start WPA](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/WPA-config-file.png)
+
 6. Start WPA Supplicant in the foreground to confirm it works.
 
         wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 
-###### If this prints successful connection (as pictured below), press "CTRL + C" to stop it and get back to the terminal.
+    ###### If this prints successful connection (as pictured below), press "CTRL + C" to stop it and get back to the terminal.
 
-[INSERT PICTURE HERE]
+    ![Check WPA](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/WPA-Connection-Test.png)
 
 7. If Step 6 worked, run it in the background.
 
         wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 
-[INSERT PICTURE HERE]
+    ![background WPA](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/WPA-Success.png)
 
 8. Check the adapter has come up (it won't have an IP yet).
 
         ip a
 
-[INSERT PICTURE HERE]
 
 9. Configure the interface with an IP address.
 
         udhcpc -i wlan0
 
-[INSERT PICTURE HERE]
+    ![DHCP](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/DHCP.png)
 
 10. Check the interface has successfully leased an IP from the DHCP Server.
 
         ip addr show wlan0
 
-[INSERT PICTURE HERE]
+    ![DHCP Success](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/DHCP%20Success.png)
+
 
 11. 
 
