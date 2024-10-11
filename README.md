@@ -1,5 +1,7 @@
 # Alpine Linux Bare-Metal Setup
- Setup of Alpine linux on bare metal systems
+ Setup of Alpine linux on bare metal systems.
+
+ Of interest, this guide was written using a VM as a test case for deployment on a Thin Client. The VM matched the Thin Client's resources (2 cores, 2GB RAM, 4GB Storage, One Gb Ethernet, 1 Wireless Adapter (actual USB Wireless dongle - testing drivers)). At the end of this guide, the system still has 1.5GB of storage space remaining (with the 1GB of swap never being used)! RAM usage has sat around 148MB/2GB. Impressive.
 
 ###### Some of this guide uses extracts from other online guides. Please see the credits section at the bottom for credits.
 
@@ -45,7 +47,7 @@ This script will run through and setup Alpine's configuration. The parameters to
 
     3. Network options: 
     
-    3a. Select the eth0 adapter, this is the onboard ethernet port)
+    3a. Select the eth0 adapter, this is the onboard ethernet port
 
     3b. You can either specify DHCP or setup static networking.
 
