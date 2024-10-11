@@ -157,7 +157,7 @@ To search for available packages and their names, use the links below.
 
 ### Install Nano file editor.
 
-        apk add nano
+    apk add nano
 
 ### Install Docker & Docker Compose
 
