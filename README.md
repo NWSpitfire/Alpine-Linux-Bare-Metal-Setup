@@ -13,6 +13,4 @@
 
 1. Set Boot Partition to 500MB.
 
-        export BOOT_SIZE=500
-
-        g
+     export BOOT_SIZE=500
