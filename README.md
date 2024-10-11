@@ -6,7 +6,9 @@
 ###### Some of this guide uses extracts from other online guides. Please see the credits section at the bottom for credits.
 
 
-# Prerequesits
+# Prerequisites.
+
+TBA
 
 # Installation
 ## Preperation
