@@ -166,7 +166,7 @@ To search for available packages and their names, use the links below.
 
 ** Before starting, don't forget to become the root user.**
 
-        su
+    su
 
 ### Install Nano file editor
 
