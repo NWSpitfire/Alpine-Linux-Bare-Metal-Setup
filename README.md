@@ -201,10 +201,9 @@ Installing Docker is a several step process.
 
 Go to the systems IP address, on port 80 and you should see the Nginx landing page!.
 
-###### Press "CTRL + C" to exit.
-
 ![Nginx](https://github.com/NWSpitfire/Alpine-Linux-Bare-Metal-Setup/blob/main/Pictures/nginx.png)
 
+###### Press "CTRL + C" in the terminal to exit.
 
         
 ### Install htop to view system usage in a more human readable format
