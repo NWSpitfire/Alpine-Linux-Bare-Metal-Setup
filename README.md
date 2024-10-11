@@ -18,9 +18,10 @@
         export BOOT_SIZE=500
 
 2. Set system Swap sizing. 
-###### NOTE: On storage-limited systems such as Thin Clients, less should be used. [Current Setup on a Wyse 3030LT with 4GB eMMC is 1024MB swap].
 
         export SWAP_SIZE=2048
+
+    ###### NOTE: On storage-limited systems such as Thin Clients, less should be used. [Current Setup on a Wyse 3030LT with 4GB eMMC is 1024MB swap].
 
 3. Set system Bootloader type.
 
